@@ -1,0 +1,29 @@
+{
+  "name": "gulp",
+  "version": "0.0.1",
+  "author": "intermundos <junk.intermundos@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "clean:dist": "del dist"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.18.8",
+    "css-mqpacker": "^5.0.1",
+    "del": "^2.2.2",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-preprocess": "^2.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "ngrok": "^2.2.6",
+    "rucksack-css": "^0.9.1",
+    "sanitize.css": "^5.0.0"
+  }
+}
