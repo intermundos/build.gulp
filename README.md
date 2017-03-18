@@ -1,6 +1,6 @@
 # Gulp front build
 
-##Under the hood:
+## Under the hood:
 
 - browser-sync + ngrok for seeing and showing
 - sass + postcss for super easy styling
@@ -11,10 +11,3 @@
 - babel for ES6 now
 
 
-### dev build
-
-
-### production build
-
-- gulp-shorthand
-- gulp-uncss
