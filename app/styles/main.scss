@@ -1,20 +1,5 @@
 @import "utils/utils";
+@import "global/global";
 
-body {
-  background-color: yellow;
-  display: flex;
-  height: 300px;
-  
-  @include breakpoint(300px) {
-    background-color: grey;
-  }
-}
 
-button {
-  width: 400px;
-
-  @include breakpoint(300px) {
-    width: 100px;
-  }
-}
 

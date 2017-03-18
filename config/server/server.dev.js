@@ -13,6 +13,17 @@ const server = {
 		logPrefix: "development",
 		open: false,
 		injectChanges: true
+	},
+
+	production: {
+		server: {
+			baseDir: 'www'
+		},
+		tunnel: false,
+		host: 'localhost',
+		port: 3334,
+		logPrefix: "production",
+		open: true
 	}
 };
 
