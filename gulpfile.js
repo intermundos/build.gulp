@@ -20,7 +20,6 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const nano = require('gulp-cssnano');
 const csscomb = require('gulp-csscomb');
-const csscombConfig = require('./config/css/csscomb.config');
 
 //Scripts processing
 const babel = require('gulp-babel');
@@ -32,6 +31,7 @@ const imagemin = require('gulp-imagemin');
 /*
  *      -= DEVELOPMENT CONFIG =-
  */
+
 // Build:development
 gulp.task('build', gulp.series(clean, gulp.parallel(html, images, fonts, video, styles, vendorStyles, scripts, vendorScripts))
 );
@@ -98,7 +98,7 @@ function styles() {
 		require('autoprefixer')({browsers: ['last 2 versions', '>5%']})
 	];
 	const sassConfig = {
-		outputStyle: 'compact'
+
 	};
 	return gulp.src(paths.styles.src)
 		.pipe(plumb())
@@ -106,15 +106,15 @@ function styles() {
 		.pipe(pp())
 		.pipe(sass.sync(sassConfig).on('error', sass.logError))
 		.pipe(postcss(plugins))
-		.pipe(csscomb(csscombConfig))
-		.pipe(sourcemaps.write('/'))
+		.pipe(csscomb())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.styles.dist))
 		.pipe(bsync.stream({match: '**/*.css'}))
 }
 
 // Vendor CSS
 function vendorStyles() {
-	return gulp.src(paths.styles.vendors, {since: gulp.lastRun(vendorStyles)})
+	return gulp.src(paths.styles.vendors, { since: gulp.lastRun(vendorStyles) })
 		.pipe(plumb())
 		.pipe(pp())
 		.pipe(sass({outputStyle: 'compressed'}))
