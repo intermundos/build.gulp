@@ -1,5 +1,3 @@
 console.log('main script works!');
 
-
-
-//@include test.js
+//@include es6.js
