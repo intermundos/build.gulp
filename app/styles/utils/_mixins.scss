@@ -1,0 +1,11 @@
+@mixin between($property, $maxSize, $minSize, $fromWidth, $toWidth) {
+  #{$property}: $minSize;
+
+  @media screen and (min-width: $toWidth){
+    #{$property}: between($minSize, $maxSize, $toWidth, $fromWidth);
+  }
+
+  @media screen and (min-width: $fromWidth) {
+    #{$property}: $maxSize;
+  }
+}

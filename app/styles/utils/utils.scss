@@ -1,6 +1,6 @@
-
-// Module imports
-@import "../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "functions";
+@import "mixins";
+@import "media-queries";
 
 // Colors
 $mainColor: red;

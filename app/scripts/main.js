@@ -1,3 +1,9 @@
-console.log('main script works!');
+console.log('main script works!')
 
-//@include es6.js
+$(document).ready(function () {
+  const log = (text) => {
+    console.log(text);
+  }
+  log('jQuery works')
+  log('es6 works')
+})

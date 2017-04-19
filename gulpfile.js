@@ -116,8 +116,12 @@ function styles() {
 function vendorStyles() {
 	return gulp.src(paths.styles.vendors, { since: gulp.lastRun(vendorStyles) })
 		.pipe(plumb())
+    .pipe(sourcemaps.init())
 		.pipe(pp())
-		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(sass({
+      outputStyle: 'compressed',
+      includePaths: 'node_modules'
+		}))
 		.pipe(nano({
 			convertValues: {
 				length: false
@@ -126,6 +130,7 @@ function vendorStyles() {
 				removeAll: true
 			}
 		}))
+    .pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.styles.dist))
 		.pipe(bsync.stream({match: '**/*.css'}))
 }
